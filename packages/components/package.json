@@ -1,0 +1,39 @@
+{
+  "name": "@newchic/components",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "xuyujin <xuyujin@banggood.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/components.min.js",
+  "module": "dist/components.esm.js",
+  "directories": {
+    "lib": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "watch": "rollup --config --watch"
+  },
+  "devDependencies": {
+    "lit-element": "^2.4.0",
+    "node-sass": "^5.0.0",
+    "rollup": "^2.36.1",
+    "rollup-plugin-postcss-inject-to-css": "^1.0.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-url": "^6.0.0",
+    "postcss": "^8.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "slim-js": "^4.0.7"
+  }
+}
