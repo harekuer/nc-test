@@ -1,0 +1,56 @@
+{
+  "name": "newchic-root",
+  "author": "xuyujin <xuyujin@banggood.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "commit": "git add . && git-cz",
+    "lint": "eslint **/*.{js,vue} --fix",
+    "build": "lerna run --stream --sort build",
+    "clean": "lerna clean --yes && rimraf yarn.lock node_modules"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "node 'scripts/checkGitBranch.js'"
+    }
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,html}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "commitizen": "^4.2.2",
+    "cross-env": "^7.0.3",
+    "cz-lerna-changelog": "^2.0.3",
+    "eslint": "^7.16.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^7.3.0",
+    "git-repo-info": "^2.1.1",
+    "husky": "^4.3.6",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.3",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {}
+}

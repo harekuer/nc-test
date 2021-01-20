@@ -1,0 +1,28 @@
+{
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "bootstrap": {
+      "hoist": true,
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    },
+    "version": {
+      "allowBranch": ["master"],
+      "conventionalCommits": true,
+      "message": "chore(release): publish"
+    },
+    "create": {
+      "esModule": true
+    }
+  },
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent",
+  "ignoreChanges": [
+    "**/*.md",
+    "**/__tests__/**"
+  ]
+}
